@@ -2,8 +2,9 @@ import { StyledProductCard } from './style';
 import { StyledButton } from '../../../styles/button';
 import { StyledParagraph, StyledTitle } from '../../../styles/typography';
 
-const ProductCard = () => (
-  <StyledProductCard>
+const ProductCard = () => {
+  return (
+    <StyledProductCard>
     <div className='imageBox'>
       <img src='https://i.imgur.com/Vng6VzV.png' alt='Hamburguer' />
     </div>
@@ -18,6 +19,7 @@ const ProductCard = () => (
       </StyledButton>
     </div>
   </StyledProductCard>
-);
+  )
+}
 
 export default ProductCard;

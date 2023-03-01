@@ -3,8 +3,9 @@ import { MdDelete } from 'react-icons/md';
 import { StyledCartProductCard } from './style';
 import { StyledTitle } from '../../../../styles/typography';
 
-const CartProductCard = () => (
-  <StyledCartProductCard>
+const CartProductCard = () => {
+  return (
+    <StyledCartProductCard>
     <div className='imageBox'>
       <img src='https://i.imgur.com/Vng6VzV.png' alt='Hamburguer' />
     </div>
@@ -17,6 +18,9 @@ const CartProductCard = () => (
       </button>
     </div>
   </StyledCartProductCard>
-);
+
+  )
+}
+ 
 
 export default CartProductCard;

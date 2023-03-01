@@ -6,8 +6,10 @@ import { StyledButtonLink } from '../../styles/button';
 import { StyledContainer, StyledGridBox } from '../../styles/grid';
 import { StyledParagraph, StyledTitle } from '../../styles/typography';
 
-const LoginPage = () => (
-  <StyledLoginPage>
+const LoginPage = () =>{
+
+  return (
+    <StyledLoginPage>
     <StyledContainer>
       <div className='flexGrid'>
         <div className='left'>
@@ -24,7 +26,7 @@ const LoginPage = () => (
               $buttonSize='default'
               $buttonStyle='gray'
             >
-              Cadastrar
+           Cadastrar
             </StyledButtonLink>
           </StyledGridBox>
         </div>
@@ -34,6 +36,7 @@ const LoginPage = () => (
       </div>
     </StyledContainer>
   </StyledLoginPage>
-);
+  )
+} 
 
 export default LoginPage;

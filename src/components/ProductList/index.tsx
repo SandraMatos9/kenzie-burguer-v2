@@ -1,10 +1,11 @@
 import ProductCard from './ProductCard';
 import { StyledProductList } from './style';
 
-const ProductList = () => (
-  <StyledProductList>
-    <ProductCard />
-  </StyledProductList>
-);
-
+const ProductList = () => {
+  return (
+    <StyledProductList>
+      <ProductCard />
+    </StyledProductList>
+  );
+};
 export default ProductList;

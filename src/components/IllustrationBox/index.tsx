@@ -4,8 +4,9 @@ import BallsIllustration from '../../assets/BallsIllustrations.svg';
 import Icon from '../../assets/Icon.svg';
 import { StyledParagraph } from '../../styles/typography';
 
-const IllustrationBox = () => (
-  <StyledIllustrationBox>
+const IllustrationBox = () => {
+  return (
+    <StyledIllustrationBox>
     <img src={LogoKenzieBurguer} alt='Logo Kenzie Burguer' />
     <div className='styledBox'>
       <img src={Icon} alt='Ícone de cesta de compras' />
@@ -16,6 +17,7 @@ const IllustrationBox = () => (
     </div>
     <img className='ballsImage' src={BallsIllustration} alt='Bolinhas' />
   </StyledIllustrationBox>
-);
+  )
+}
 
 export default IllustrationBox;
