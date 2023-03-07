@@ -18,13 +18,13 @@ const CartProductCard = () => {
   }
 
 
-  return 
+  return (
  <>
  
     {currentSale.map((products:IProductsList) => {
 
     return (
-     <StyledCartProductCard>
+     <StyledCartProductCard key={products.id}>
         <div className='imageBox'>
           <img src={products.img} alt={products.name} />
         </div>
@@ -44,9 +44,9 @@ const CartProductCard = () => {
           </button>
         </div>
       </StyledCartProductCard>
-    );
-  })};
-</>
+    )
+  })}
+</>)
 };
 
 export default CartProductCard;

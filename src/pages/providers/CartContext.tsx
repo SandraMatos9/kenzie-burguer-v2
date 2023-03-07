@@ -34,9 +34,11 @@ const [info,setInfo] = useState("")
     });
     if (arrayFind) {
       toast.error('Já existe no carrinho!');
-    }
-    setCurrentSale([...currentSale, addProduto]);
+    }else{
+        setCurrentSale([...currentSale, addProduto]);
     toast.success('Adicionado com sucesso!');
+    }
+  
   };
 
   const [productSearchContext, setProductSearchContext] = useState([] as any[]);
