@@ -15,14 +15,37 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const token = localStorage.getItem("@TOKEN")
+    if(token){
+        const userAutoLogin = async () => {
+            try {
+              api.defaults.headers.common.Authorization = `Bearer ${token}`;
+
+                const response = await api.get('/login')
+                setUser(response.data);
+                navigate('/shop')
+                toast.success('Login feito com sucesso!');
+
+            } catch (error) {
+                console.log(error)
+                // localStorage.clear("@TOKEN")
+            }
+
+           
+        }
+         userAutoLogin()
+    }
+}, [])
+
   
 
   const userRegister = async (formData: IRegisterFormValues) => {
     try {
       // setLoading(true)
-      const response = await api.post('/login', formData);
+      const response = await api.post('/users', formData);
       setUser(response.data.user);
-      localStorage.setItem('@TOKEN', response.data.token);
+      localStorage.setItem('@TOKEN', response.data.accessToken);
       navigate('/');
       toast.success('Cadastro feito com sucesso!');
     } catch (error) {
@@ -33,12 +56,10 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
 
   const userLogin = async (formData: ILoginFormValues) => {
     try {
-      // setLoading(true)
       const response = await api.post('/login', formData);
       setUser(response.data.user);
-      localStorage.setItem('@TOKEN', response.data.token);
+      localStorage.setItem('@TOKEN', response.data.accessToken);
       navigate('/shop');
-      console.log('Login realizado com sucesso!');
     } catch (error) {
       console.log(error);
     }

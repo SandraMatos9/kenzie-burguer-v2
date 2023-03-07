@@ -18,4 +18,13 @@ export const GlobalStyles = createGlobalStyle`
     display: unset;
     position: unset;
   }
+
+  .container{
+    max-width: 1368px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
 `;
