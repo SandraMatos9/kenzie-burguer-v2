@@ -12,7 +12,7 @@ const App = () => {
     <>
       <UserProvider>
         <GlobalStyles />
-        <Router />
+        <AppRoutes />
       </UserProvider>
     <ToastContainer autoClose={2000} position='top-right' closeOnClick pauseOnHover/>
 

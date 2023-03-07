@@ -6,7 +6,7 @@ import { StyledParagraph } from '../../../styles/typography';
 interface IInputProps {
   label: string;
   register:UseFormRegisterReturn<string>
-  error?:FieldError
+  error?:any
   type:'text'|'password'|'email'
 
 }
@@ -17,7 +17,7 @@ const Input = ({label,register,error,type}:IInputProps) => {
     <fieldset>
       <StyledTextField label={label}type={type} {...register}/>
       
-      <StyledParagraph fontColor='red' >Erro</StyledParagraph>
+      <StyledParagraph fontColor='red' >{error && error}</StyledParagraph>
       {error?<p>{error.message}</p>:null}
       
     </fieldset>

@@ -10,6 +10,9 @@ import Input from '../Input';
 
 
 const RegisterForm = () => {
+
+  
+
   const {
     register,
     handleSubmit,

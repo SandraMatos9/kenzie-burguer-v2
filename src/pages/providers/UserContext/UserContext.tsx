@@ -16,6 +16,7 @@ export const UserProvider = ({ children }: IDefaultProviderProps) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log("sandra")
     const token = localStorage.getItem("@TOKEN")
     if(token){
         const userAutoLogin = async () => {

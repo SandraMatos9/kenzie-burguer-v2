@@ -9,6 +9,8 @@ const ProtectedRoutes = () => {
     const navigate = useNavigate()
 
    
+    const token = localStorage.getItem('@TOKEN');
+
 
     return (
         // eslint-disable-next-line react/jsx-no-useless-fragment

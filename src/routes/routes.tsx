@@ -16,7 +16,7 @@ const AppRoutes = () => {
           path='/shop'
           element={
             <CartProvider>
-              <Route path='/shop' element={<ShopPage />} />
+              <ShopPage />
             </CartProvider>
           }
         />

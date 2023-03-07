@@ -12,17 +12,10 @@ import { api } from '../../services/api';
 
 export const CartContext = createContext({} as ICartContext);
 
-
-
-
-
-
 export const CartProvider = ({ children }: IDefaultProviderProps) => {
-const [currentSale, setCurrentSale] = useState<IProductsList[]>([]);
-const [search, setSearch] = useState<IProductsList[]>([]);
-const [info,setInfo] = useState("")
-
-
+  const [currentSale, setCurrentSale] = useState<IProductsList[]>([]);
+  const [search, setSearch] = useState<IProductsList[]>([]);
+  const [info, setInfo] = useState('');
 
   const [productsContext, setProductsContext] = useState<IProductsList[] | []>(
     []
@@ -34,11 +27,10 @@ const [info,setInfo] = useState("")
     });
     if (arrayFind) {
       toast.error('Já existe no carrinho!');
-    }else{
-        setCurrentSale([...currentSale, addProduto]);
-    toast.success('Adicionado com sucesso!');
+    } else {
+      setCurrentSale([...currentSale, addProduto]);
+      toast.success('Adicionado com sucesso!');
     }
-  
   };
 
   const [productSearchContext, setProductSearchContext] = useState([] as any[]);
@@ -48,6 +40,8 @@ const [info,setInfo] = useState("")
 
   const productsList = async () => {
     try {
+      api.defaults.headers.common.Authorization = `Bearer ${token}`;
+
       const response = await api.get<IProductsList[]>('/products');
       console.log(response);
       setProductsContext(response.data);
@@ -60,11 +54,6 @@ const [info,setInfo] = useState("")
       productsList();
     }
   }, []);
-
-   
-  
-
-  
 
   return (
     <CartContext.Provider
@@ -79,7 +68,7 @@ const [info,setInfo] = useState("")
         search,
         setSearch,
         info,
-        setInfo
+        setInfo,
       }}
     >
       {children}
